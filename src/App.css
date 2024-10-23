@@ -1,38 +1,101 @@
-.App {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #282c34;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.game {
+  background-color: #3b3f4c;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
+h1 {
   color: #61dafb;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.square {
+  width: 120px;
+  height: 120px;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #61dafb;
+  color: #282c34;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.square:hover {
+  background-color: #4ca8cf;
+  transform: scale(1.05);
+}
+
+.info h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+
+button:hover {
+  background-color: #4ca8cf;
+  transform: scale(1.1);
+}
+
+button:focus {
+  outline: none;
+}
+
+
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
   }
-  to {
-    transform: rotate(360deg);
+
+  .square {
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  button {
+    padding: 8px 25px;
+    font-size: 16px;
   }
 }
